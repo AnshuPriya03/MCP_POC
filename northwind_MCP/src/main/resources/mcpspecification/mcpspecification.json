@@ -1,0 +1,95 @@
+{
+  "$schema" : "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "name" : "northwind_MCP",
+  "title" : "This is northwind_MCP MCP Server",
+  "version" : "1.0.0",
+  "description" : "<p>This is northwind_MCP MCP Server.</p>",
+  "instructions" : "<p>This is northwind_MCP MCP Server.</p>",
+  "supportedProtocolVersions" : [ "2025-11-25" ],
+  "capabilities" : {
+    "prompts" : {
+      "listChanged" : false
+    },
+    "resources" : {
+      "subscribe" : false,
+      "listChanged" : false
+    },
+    "tools" : {
+      "listChanged" : false
+    }
+  },
+  "remotes" : [ {
+    "type" : "streamable-http",
+    "url" : "https://65fac952trial-f8d912bc17e345fd96f3f6e6470c4385.a.integration.cloud.sap/northwind-mcp"
+  } ],
+  "tools" : [ {
+    "name" : "get_Employees",
+    "title" : "Get Employees",
+    "description" : "Returns employees. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "filter" : {
+          "type" : "string"
+        },
+        "top" : {
+          "type" : "integer"
+        },
+        "select" : {
+          "type" : "string"
+        },
+        "orderby" : {
+          "type" : "string"
+        }
+      }
+    }
+  }, {
+    "name" : "get_Customers",
+    "title" : "Get Customers",
+    "description" : "Returns customers. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "filter" : {
+          "type" : "string"
+        },
+        "top" : {
+          "type" : "integer"
+        },
+        "select" : {
+          "type" : "string"
+        },
+        "orderby" : {
+          "type" : "string"
+        }
+      }
+    }
+  }, {
+    "name" : "get_Orders",
+    "title" : "Get Orders",
+    "description" : "Returns orders. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+    "inputSchema" : {
+      "type" : "object",
+      "properties" : {
+        "filter" : {
+          "type" : "string"
+        },
+        "top" : {
+          "type" : "integer"
+        },
+        "select" : {
+          "type" : "string"
+        },
+        "expand" : {
+          "type" : "string"
+        },
+        "orderby" : {
+          "type" : "string"
+        }
+      }
+    }
+  } ],
+  "resources" : [ ],
+  "resourceTemplates" : [ ],
+  "prompts" : [ ]
+}
