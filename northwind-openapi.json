@@ -1,0 +1,54 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "NorthWind API",
+    "version": "1.0.0",
+    "x-targetEndpoint": "https://65fac952trial.it-cpitrial05-rt.cfapps.us10-001.hana.ondemand.com/http"
+  },
+  "servers": [{ "url": "https://65fac952trial.a.integration.cloud.sap/northwind" }],
+  "paths": {
+    "/Employees": {
+      "get": {
+        "operationId": "getEmployees",
+        "summary": "Get Employees",
+        "description": "Returns employees. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+        "parameters": [
+          { "name": "$filter", "in": "query", "schema": { "type": "string" } },
+          { "name": "$top",    "in": "query", "schema": { "type": "integer" } },
+          { "name": "$select", "in": "query", "schema": { "type": "string" } },
+          { "name": "$orderby","in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "List of employees" } }
+      }
+    },
+    "/Customers": { 
+	   "get": {
+        "operationId": "getCustomers",
+        "summary": "Get Customers",
+        "description": "Returns customers. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+        "parameters": [
+          { "name": "$filter", "in": "query", "schema": { "type": "string" } },
+          { "name": "$top",    "in": "query", "schema": { "type": "integer" } },
+          { "name": "$select", "in": "query", "schema": { "type": "string" } },
+          { "name": "$orderby","in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "List of customers" } }
+      }
+    },
+    "/Orders":    { 
+	  "get": {
+        "operationId": "getOrders",
+        "summary": "Get Orders",
+        "description": "Returns orders. Supports OData: $filter (e.g. City eq 'London'), $top, $select, $orderby",
+        "parameters": [
+          { "name": "$filter", "in": "query", "schema": { "type": "string" } },
+          { "name": "$top",    "in": "query", "schema": { "type": "integer" } },
+          { "name": "$select", "in": "query", "schema": { "type": "string" } },
+          { "name": "$expand", "in": "query", "schema": { "type": "string" } },
+          { "name": "$orderby","in": "query", "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "List of orders" } }
+      }
+    }
+  }
+}
